@@ -1,5 +1,2 @@
-
 BATCH_SIZE = 32
-TARGET_IMAGE_HEIGHT = 64
-TARGET_IMAGE_WIDTH = 64
-EPOCHS = 5
+MODEL_NAME = 'fruit_classifier.model'

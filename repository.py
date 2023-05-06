@@ -4,7 +4,7 @@ import numpy as np
 import constraints as CONST
 
 
-def get_dataset():
+def get_dataset(data_path: str, size: tuple):
     data_generator = ImageDataGenerator(
         rescale=1./255,
         shear_range=0.2,
@@ -13,16 +13,16 @@ def get_dataset():
     )
 
     train_dataset_generator = data_generator.flow_from_directory(
-        CONST.TRAIN_DATA_PATH,
-        target_size=(CONST.TARGET_IMAGE_HEIGHT, CONST.TARGET_IMAGE_WIDTH),
+        data_path + '\\Training',
+        target_size=(size[0], size[1]),
         class_mode='categorical',
         batch_size=CONST.BATCH_SIZE,
         shuffle=True
     )
 
     test_dataset_generator = data_generator.flow_from_directory(
-        CONST.TEST_DATA_PATH,
-        target_size=(CONST.TARGET_IMAGE_HEIGHT, CONST.TARGET_IMAGE_WIDTH),
+        data_path + '\\Test',
+        target_size=(size[0], size[1]),
         class_mode='categorical',
         batch_size=CONST.BATCH_SIZE,
         shuffle=True
