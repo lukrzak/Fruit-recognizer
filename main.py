@@ -8,7 +8,6 @@ import time
 DATA_SET = 'rare_set'
 DATA_PATH = 'data/' + DATA_SET
 
-
 if __name__ == "__main__":
     start = time.time()
     accuracy_conv = convolutional.run(DATA_PATH, 5, (64, 64))

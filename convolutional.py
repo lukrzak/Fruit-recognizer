@@ -24,4 +24,3 @@ def run(data_path: str, epochs: int, size: tuple):
 
     loss, accuracy = model.evaluate(test_images, test_labels)
     return accuracy
-
